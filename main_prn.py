@@ -7,5 +7,11 @@ print(f'G1 code is:\n{bits_list_to_hex(g1)}\n{"".join([("1" if x else "0") for x
 g2 = create_G2_code()
 print(f'G2 code is:\n{bits_list_to_hex(g2)}\n{"".join([("1" if x else "0") for x in g2])}')
 
-g2_24 = create_G2i_code(24)
-print(f'G2_24 code is:\n{bits_list_to_hex(g2_24)}\n{"".join([("1" if x else "0") for x in g2_24])}')
+# g2_1 = create_G2i_code(1)
+# print(f'G2_1 code is:\n{bits_list_to_hex(g2_1)}\n{"".join([("1" if x else "0") for x in g2_1])}')
+
+g2_11 = create_G2i_code(11)
+print(f'G2_11 code is:\n{bits_list_to_hex(g2_11)}\n{"".join([("1" if x else "0") for x in g2_11])}')
+
+# g2_24 = create_G2i_code(24)
+# print(f'G2_24 code is:\n{bits_list_to_hex(g2_24)}\n{"".join([("1" if x else "0") for x in g2_24])}')
