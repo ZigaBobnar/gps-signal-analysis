@@ -1,3 +1,4 @@
+from bpsk_dsss.digital_signal import upsample_signal
 from bpsk_dsss.access_code import create_access_code
 
 
@@ -8,16 +9,16 @@ def spread_signal(signal, id, sample_frequency, dsss_code_frequency):
     code_dsss_sequence = [1 if x else -1 for x in code]
 
     code_samples_repeats = sample_frequency//dsss_code_frequency
-    code_length = len(code_dsss_sequence)
+
+    code_samples = upsample_signal(code_dsss_sequence, code_samples_repeats)
+    sampled_code_length = len(code_samples)
 
     output = []
 
     for i in range(len(signal)):
         value = signal[i]
 
-        code_index = ((0 if i==0 else i//code_samples_repeats) % code_length)
-        # print(code_index)
-        code_value = code_dsss_sequence[code_index]
+        code_value = code_samples[i % sampled_code_length]
 
         value = value*code_value
 

@@ -1,3 +1,4 @@
+from math import floor
 from bpsk_dsss.utils import get_repeated_bits_count
 
 
@@ -12,6 +13,19 @@ def sample_digital_signal(signal_bytes, sample_rate, symbol_rate, symbol_length_
                 signal.append(bit)
 
     return signal
+
+
+def upsample_signal(signal, factor):
+    if floor(factor) != factor:
+        raise Exception(f'Cannot upsample by rational factor: {factor}')
+
+    output = []
+    for sample in signal:
+        for _ in range(factor):
+            output.append(sample)
+
+    return output
+
 
 def bipolar_signal_to_binary(signal):
     return [1 if x > 0 else 0 for x in signal]

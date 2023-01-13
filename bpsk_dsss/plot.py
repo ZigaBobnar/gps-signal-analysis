@@ -12,5 +12,5 @@ last_plot_id = 0
 
 def save_plot(file_name):
     global last_plot_id
-    pyplot.savefig(f'{settings.results_path}{last_plot_id}_{file_name}', bbox_inches='tight')
+    pyplot.savefig(f'{settings.results_path}{last_plot_id}_{file_name}{settings.plot_filetype}', bbox_inches='tight')
     last_plot_id += 1
