@@ -17,6 +17,7 @@ dsss_code_frequency = 128
 original_signal_path = './data/test_bpsk_dsss.raw'
 modulated_signal_path = './data/test_bpsk_dsss_modulated.raw'
 decoded_signal_path = './data/test_bpsk_dsss_decoded.raw'
+results_path = './data/results/'
 
 original_signal_data = 'Hello, World!'
 

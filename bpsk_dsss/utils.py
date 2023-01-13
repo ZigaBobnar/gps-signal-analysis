@@ -1,7 +1,5 @@
 from math import floor
 
-from matplotlib import pyplot
-
 
 def get_repeated_bits_count(sample_rate, symbol_rate, symbol_length_bits):
     repeated_bits_count = sample_rate/symbol_rate/symbol_length_bits
@@ -30,8 +28,3 @@ def write_byte_signal(file_path, signal):
     f = open(file_path, 'wb')
     f.write(buffer)
     f.close()
-
-def show_plot(*data):
-    for plot in data:
-        pyplot.plot(plot)
-    pyplot.show()
